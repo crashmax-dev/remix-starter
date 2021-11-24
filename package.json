@@ -4,23 +4,24 @@
   "description": "",
   "license": "",
   "scripts": {
+    "start": "vercel dev",
+    "dev": "concurrently -n watch-dev,server \"npx remix watch\" \"npm start\"",
     "build": "remix build",
-    "dev": "remix watch",
-    "postinstall": "remix setup node",
-    "start": "vercel dev"
+    "postinstall": "remix setup node"
   },
   "dependencies": {
     "@remix-run/react": "^1.0.4",
+    "@remix-run/vercel": "^1.0.4",
+    "@vercel/node": "^1.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "remix": "^1.0.4",
-    "@remix-run/vercel": "^1.0.4",
-    "@vercel/node": "^1.8.3"
+    "remix": "^1.0.4"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.0.4",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "concurrently": "^6.4.0",
     "typescript": "^4.1.2",
     "vercel": "^21.2.2"
   },
